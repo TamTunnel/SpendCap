@@ -1,0 +1,13 @@
+{
+  "license": "Apache-2.0",
+  "name": "@tamtunnel/spendcap-commercial-billing",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "stripe": "^19.0.0"
+  }
+}

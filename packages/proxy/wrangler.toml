@@ -1,0 +1,11 @@
+name = "spendcap-proxy"
+compatibility_date = "2026-10-01"
+
+[[durable_objects.bindings]]
+name = "BUDGET_DO"
+class_name = "BudgetEnforcer"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "spendcap"
+database_id = "23ee0455-d638-4ee9-8cce-36d41718e020"

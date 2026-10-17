@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": [
+    "src",
+    "test"
+  ],
+  "references": [
+    {
+      "path": "../auth"
+    },
+    {
+      "path": "../budget"
+    }
+  ],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

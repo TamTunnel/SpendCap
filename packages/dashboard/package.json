@@ -1,0 +1,14 @@
+{
+  "license": "Apache-2.0",
+  "name": "@tamtunnel/spendcap-dashboard",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "@tamtunnel/spendcap-cli": "0.1.0",
+    "@tamtunnel/spendcap-proxy": "0.1.0"
+  }
+}

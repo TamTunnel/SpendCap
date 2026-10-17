@@ -1,0 +1,23 @@
+name = "spendcap-dashboard"
+compatibility_date = "2026-10-01"
+
+[[durable_objects.bindings]]
+name = "BUDGET_DO"
+class_name = "BudgetEnforcer"
+# The proxy worker OWNS the BudgetEnforcer namespace (it does the enforcing).
+# The dashboard reads live budget state from the proxy's DO — same namespace,
+# so bars reflect the counters the proxy actually enforces against.
+# Deploy spendcap-proxy before spendcap-dashboard.
+script_name = "spendcap-proxy"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "spendcap"
+database_id = "23ee0455-d638-4ee9-8cce-36d41718e020"
+
+[site]
+bucket = "./public"
+
+# Secrets are NEVER committed here. Set them with `wrangler secret put <NAME>`
+# (production) or copy .dev.vars.example to .dev.vars (local dev, gitignored).
+# The dashboard fails closed when ADMIN_TOKEN is unset.

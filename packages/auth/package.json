@@ -1,0 +1,16 @@
+{
+  "license": "Apache-2.0",
+  "name": "@tamtunnel/spendcap-auth",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "type": "module",
+  "version": "0.1.0",
+  "exports": {
+    ".": {
+      "types": "./src/keys.ts",
+      "default": "./src/keys.ts"
+    }
+  }
+}

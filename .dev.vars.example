@@ -1,0 +1,36 @@
+# Spendcap local-dev secrets — root template.
+#
+# Usage:
+#   1. Copy the per-worker example next to the worker you'll run and rename
+#      it to `.dev.vars` (gitignored — real secrets never get committed):
+#        cp packages/dashboard/.dev.vars.example packages/dashboard/.dev.vars
+#        cp .dev.vars.example packages/proxy/.dev.vars   # then fill in
+#   2. Fill in real values below.
+#   3. Production: use `wrangler secret put <NAME>` per worker instead —
+#      wrangler.toml must NEVER contain secrets (the dashboard fails closed
+#      when ADMIN_TOKEN is unset, which is safer than a committed placeholder).
+#
+# Generate random values with:  openssl rand -base64 32
+
+# --- Proxy worker (packages/proxy) -------------------------------------------
+# Encrypts provider (upstream LLM) API keys at rest (AES-256-GCM envelope in D1).
+# Required. Self-hosters need this; it has nothing to do with Stripe.
+PROVIDER_KEYS_SECRET=
+
+# Base URL of the upstream provider (e.g. https://api.openai.com).
+# The proxy forwards authorized requests here.
+DEFAULT_PROVIDER_BASE_URL=https://api.openai.com
+
+# --- Dashboard worker (packages/dashboard) -----------------------------------
+# Bearer token for the dashboard admin API (/api/*). Also used by the CLI as
+# SPENDCAP_ADMIN_TOKEN. Required; the dashboard rejects everything when unset.
+ADMIN_TOKEN=
+
+# --- Hosted billing only (commercial/billing) — self-hosters skip all of these
+# Stripe secret key (sk_test_... / sk_live_...).
+STRIPE_SECRET_KEY=
+# The flat $49/mo "Spendcap Pro" recurring price ID (price_...), created once
+# in the Stripe dashboard. No usage-based billing in v1 — deliberately.
+STRIPE_PRICE_ID=
+# Webhook signing secret (whsec_...) for the hosted /webhooks/stripe endpoint.
+STRIPE_WEBHOOK_SECRET=

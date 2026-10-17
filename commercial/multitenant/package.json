@@ -1,0 +1,1 @@
+{"license":"Apache-2.0","name":"@tamtunnel/spendcap-commercial-multitenant","scripts":{"build":"tsc -p tsconfig.json","test":"vitest run"},"type":"module","version":"0.1.0"}

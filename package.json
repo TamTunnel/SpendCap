@@ -1,0 +1,1 @@
+{"devDependencies":{"@cloudflare/vitest-pool-workers":"^0.8.71","@cloudflare/workers-types":"4.20260702.1","@types/node":"^26.6.5","@vitest/coverage-v8":"^3.2.7","typescript":"^5.9.3","vitest":"^3.2.4"},"private":true,"scripts":{"build":"tsc -b","test":"vitest run","typecheck":"tsc -b"},"type":"module","workspaces":["packages/*","commercial/*"]}

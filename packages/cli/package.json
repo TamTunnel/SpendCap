@@ -1,0 +1,23 @@
+{
+  "bin": {
+    "spendcap": "dist/src/index.js"
+  },
+  "license": "Apache-2.0",
+  "name": "@tamtunnel/spendcap-cli",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "type": "module",
+  "version": "0.1.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./src/client.ts",
+      "default": "./src/client.ts"
+    }
+  }
+}

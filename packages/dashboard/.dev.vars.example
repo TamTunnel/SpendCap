@@ -1,0 +1,8 @@
+# Local dev secrets for the spendcap dashboard worker.
+# Copy to `.dev.vars` (gitignored): cp .dev.vars.example .dev.vars
+# Production: use `wrangler secret put ADMIN_TOKEN` / `wrangler secret put PROVIDER_KEYS_SECRET` instead.
+ADMIN_TOKEN=<your ADMIN_TOKEN>
+# MUST be the same value as the proxy worker's PROVIDER_KEYS_SECRET:
+# it derives the AES-GCM key that wraps provider_keys.enc_key
+# (the dashboard encrypts on store, the proxy decrypts on use).
+PROVIDER_KEYS_SECRET=<random 32+ bytes, same as the proxy's>

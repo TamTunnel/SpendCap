@@ -5,8 +5,8 @@ in front of your LLM providers and **refuses the call before the money is
 spent** — not after.
 
 > **Demo:** once published, the live dashboard demo (with the 60s explainer
-> video) will be at `https://tamtunnel.github.io/spendcap/` —
-> [`#video`](https://tamtunnel.github.io/spendcap/#video).
+> video) will be at `https://tamtunnel.github.io/SpendCap/` —
+> [`#video`](https://tamtunnel.github.io/SpendCap/#video).
 > Until then, open `demo-site/index.html` locally.
 
 ## 1. The problem
